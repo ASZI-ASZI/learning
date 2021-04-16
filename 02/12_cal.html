@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+          <!--引入 vue.js-->
+<script src="js/vue.js"></script>
+</head>
+<body>
+    <!--界面视图-->
+    <div id="app">
+        <input type="text" v-model="a"/>
+        <select v-model="orderStatus">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+          <input type="text" v-model="b">
+          <h1>结果是：{{result}}
+              
+        }}</h1>
+    </div>
+    <script>
+       var vm=new Vue({
+            el:'#app',
+            data:{
+              a:0,
+              op:'+',
+              b:0,
+              result:''
+       },
+       methods:{
+           handke(){
+               switch (this.op){
+                   case '+':
+                       this.resut=parseInt(this.a)+parseInt(this.b);
+                       break;
+                       case '-':
+                       this.resut=parseInt(this.a)+parseInt(this.b);
+                       break;  
+                       case '*':
+                       this.resut=parseInt(this.a)+parseInt(this.b);
+                       break;
+                       case '/':
+                       this.resut=parseInt(this.a)+parseInt(this.b);
+                       break;
+               }
+           }
+       },
+       watch:{
+           a(){
+               this.handle();
+           },
+           b(){
+               this.handle();
+           },
+           op(){
+               this.handle();
+           },
+       }
+       });
+    </script>
+</body>
+</html>
